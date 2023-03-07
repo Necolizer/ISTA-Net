@@ -1,0 +1,54 @@
+seed: 1
+work_dir: ./exp/h2o
+run_mode: h2o_test_get_results
+
+# feeder
+feeder: feeders.feeder_h2o.Feeder_Test
+test_feeder_args:
+  data_path: data/h2o/h2o_pth
+  split: test 
+  debug: False
+  window_size: 120
+  p_interval: [0.95]
+  vel: False
+  bone: False
+
+# model
+model: model.ISTANet.Model
+model_args:
+  window_size: [20, 1, 3]
+  num_frames: 120
+  num_joints: 21
+  num_persons: 3
+  num_channels: 3
+  num_classes: 36
+  num_heads: 3
+  kernel_size: [3, 5]
+  use_pes: True
+  config: [[64,  64,  16], [64,  64,  16], 
+           [64,  128, 32], [128, 128, 32],
+           [128, 256, 64], [256, 256, 64], 
+           [256, 256, 64], [256, 256, 64]]
+
+#optim
+optimizer: AdamW
+weight_decay: 0.0004
+base_lr: 1.e-3
+lr_decay_rate: 0.2
+step: [35, 60, 80, 95, 120]
+warm_up_epoch: 5
+nesterov: True
+
+# loss
+loss: LabelSmoothingCrossEntropy
+loss_args:
+  smoothing: 0.15
+  temperature: 1.0
+
+# training
+device: [0]
+cuda_visible_device: '0'
+batch_size: 16
+test_batch_size: 16
+num_epoch: 150
+

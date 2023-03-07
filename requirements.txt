@@ -1,0 +1,6 @@
+torch==1.9.0+cu111
+torchvision==0.10.0+cu111
+numpy==1.19.5
+matplotlib==3.5.3
+pyyaml==6.0
+tqdm==4.53.0

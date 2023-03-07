@@ -1,0 +1,68 @@
+seed: 1
+work_dir: ./exp/ntu26/xsub
+run_mode: train
+
+# feeder
+feeder: feeders.feeder_ntu.Feeder
+train_feeder_args:
+  data_path: data/ntu120/NTU120_CSub.npz
+  split: train
+  debug: False
+  random_choose: False
+  random_shift: False
+  random_move: False
+  window_size: 120
+  normalization: False
+  random_rot: True
+  p_interval: [0.5, 1]
+  vel: False
+  bone: False
+  entity_rearrangement: True
+
+test_feeder_args:
+  data_path: data/ntu120/NTU120_CSub.npz
+  split: test  
+  debug: False
+  window_size: 120
+  p_interval: [0.95]
+  vel: False
+  bone: False
+
+# model
+model: model.ISTANet.Model
+model_args:
+  window_size: [20, 1, 2]
+  num_frames: 120
+  num_joints: 25
+  num_persons: 2
+  num_channels: 3
+  num_classes: 26
+  num_heads: 3
+  kernel_size: [3, 5]
+  use_pes: True
+  config: [[64,  64,  16], [64,  64,  16], 
+           [64,  128, 32], [128, 128, 32],
+           [128, 256, 64], [256, 256, 64], 
+           [256, 256, 64], [256, 256, 64]]
+
+#optim
+optimizer: SGD
+weight_decay: 0.0004
+base_lr: 0.1
+lr_decay_rate: 0.1
+step: [35, 60, 80, 95]
+warm_up_epoch: 5
+nesterov: True
+
+# loss
+loss: LabelSmoothingCrossEntropy
+loss_args:
+  smoothing: 0.1
+  temperature: 1.0
+
+# training
+device: [0,1,2,3]
+cuda_visible_device: '0,1,2,3'
+batch_size: 32
+test_batch_size: 32
+num_epoch: 110
