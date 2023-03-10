@@ -65,6 +65,8 @@ python seq_transformation.py
 ### 3.2 SBU-Kinect-Interaction
 **DownLoad**
 
+**Directory Structure**
+
 **Generating Data**
 
 ### 3.3 H2O
@@ -121,7 +123,30 @@ python generate_h2o.py --root path/to/your/extracted/files --dest ./h2o_pth --fr
 
 **DownLoad**
 
+1. Submit an access request with your google account in [Google Drive](https://drive.google.com/drive/folders/1nh8PHwEw04zxkkkKlfm4fsR3IPEDvLKj). Download `poses_60fps` directly or using scripts in [assembly101-download-scripts](https://github.com/assembly-101/assembly101-download-scripts).
+2. Download [fine-grained-annotations](https://github.com/assembly-101/assembly101-annotations/blob/main/fine-grained-annotations) in [Google Drive](https://drive.google.com/drive/folders/1QoT-hIiKUrSHMxYBKHvWpW9Z9aCznJB7?usp=sharing)
+
+**Directory Structure**
+```
+path/to/your/downdload/root
+├── fine-grained-annotations
+│   ├── actions.csv
+│   ├── head_actions.csv
+│   ├── test.csv            (@30fps)
+│   ├── test_challenge.csv  (@30fps)
+│   ├── train.csv           (@30fps)
+│   └── validation.csv      (@30fps)
+└── poses_60fps
+    ├── nusar-2021_action_both_9011-a01_9011_user_id_2021-02-01_153724.json
+    ├── nusar-2021_action_both_9011-b06b_9011_user_id_2021-02-01_154253.json
+    ├── ...
+```
+
 **Generating Data**
+
+TBD
+
+The test set has a less number of valid samples than the provided `test_challenge.csv`. The 1018 invlid test samples (about 5%) has no pose data and will fail to predict. This may cause lower accuracy reports in CodaLab Challenge Page. More information about this could be found in discussions [assembly101 Issue#4](https://github.com/assembly-101/assembly101-action-recognition/issues/4).
 
 
 ## 4. Run the Code
@@ -152,7 +177,7 @@ python main.py --config config/sbu/sbu_clean_joint.yaml
 ```
 
 ### 4.3 H2O
-**Train & Validation**
+**Train & Validate**
 ```shell
 python main.py --config config/h2o/h2o.yaml
 ```
@@ -165,7 +190,7 @@ python main.py --config config/h2o/h2o_get_test_results.yaml --weights path/to/y
 Submit zipped json file `action_labels.json` in CodaLab Challenge [H2O - Action](https://codalab.lisn.upsaclay.fr/competitions/4820) to get the test results.
 
 ### 4.4 Assembly101
-**Train & Validation**
+**Train & Validate**
 ```shell
 # Action (mandatory): 1380 classes
 python main.py --config config/asb/asb_action.yaml
