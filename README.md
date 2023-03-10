@@ -5,22 +5,13 @@ This repository is the official implementation of Interactive Spatiotemporal Tok
 ## 0. Table of Contents
 
 * [1. Change Log](#1-change-log)
-
 * [2. Prerequisites](#2-prerequisites)
-
 * [3. Prepare the Datasets](#3-prepare-the-datasets)
-
 * [4. Run the Code](#4-run-the-code)
-
 * [5. Results](#6-results)
-
 * [6. License](#6-license)
-
 * [7. Acknowledgement](#7-acknowledgement)
-
 * [8. Citation](#8-citation)
-
-
 
 ## 1. Change Log
 - [2023/03/07] Code Upload.
@@ -45,6 +36,7 @@ For your convenience, here is the excerpt of the instructions in section [Data P
     3. Extract above files to ./data/nturgbd_raw
 
 **Directory Structure**
+
 Put downloaded data into the following directory structure:
 ```
 - data/
@@ -58,6 +50,7 @@ Put downloaded data into the following directory structure:
 ```
 
 **Generating Data**
+
 Generate NTU RGB+D 120 dataset:
 ```shell
 cd ./data/ntu120
@@ -77,10 +70,52 @@ python seq_transformation.py
 ### 3.3 H2O
 
 **DownLoad**
-1. Request dataset here: https://h2odataset.ethz.ch/
-2. Download the dataset using scripts in [h2odataset](https://github.com/taeinkwon/h2odataset) repo
+1. Request dataset here: https://h2odataset.ethz.ch/ . You can get the username and password from the download page.
+2. Download the dataset directly from the download page or using `download_script.py` in [h2odataset](https://github.com/taeinkwon/h2odataset) repo (we have included it in `./data/h2o/download_scirpt.py` in this repo)
+    ```shell
+    cd ./data/h2o
+    python download_script.py --username "username" --password "password" --mode pose --dest "dest folder path"
+    ```
+    Select `pose` mode to download only pose (hand, object, egocentric view) without RGB-D images.
+3. Extract the downloaded files.
+
+**Directory Structure**
+
+```
+path/to/your/extracted/files
+├── label_split
+├── subject1
+│   ├── h1
+│   │   ├── 0
+│   │   │   └── cam4
+│   │   │       ├── cam_pose
+│   │   │       ├── hand_pose
+│   │   │       ├── hand_pose_MANO
+│   │   │       ├── obj_pose
+│   │   │       ├── obj_pose_RT
+│   │   │       ├── action_label
+│   │   │       └── verb_label
+│   │   ├── 1
+│   │   ├── 2
+│   │   ├── 3
+│   │   └── ...
+│   ├── h2
+│   ├── k1
+│   ├── k2
+│   ├── o1
+│   └── o2
+├── subject2
+├── subject3
+├── subject4
+└── object
+```
 
 **Generating Data**
+
+Generate H2O pth files using `./data/h2o/generate_h2o.py`.
+```shell
+python generate_h2o.py --root path/to/your/extracted/files --dest ./h2o_pth --frames 120
+```
 
 ### 3.4 Assembly101
 
