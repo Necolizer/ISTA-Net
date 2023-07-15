@@ -1,6 +1,11 @@
 # Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition
+[[Website]](https://necolizer.github.io/ISTA-Net/)[[License]](https://github.com/Necolizer/ISTA-Net/blob/main/LICENSE)
 
-This repository is the official implementation of Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition (Under Review).
+This repository is the official implementation of Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition (IROS 2023).
+
+![](https://github.com/Necolizer/ISTA-Net/blob/gh-pages/static/videos/teaser.mp4)
+
+![](https://github.com/Necolizer/ISTA-Net/blob/gh-pages/static/images/Architecture.svg)
 
 ## 0. Table of Contents
 
@@ -8,15 +13,18 @@ This repository is the official implementation of Interactive Spatiotemporal Tok
 * [2. Prerequisites](#2-prerequisites)
 * [3. Prepare the Datasets](#3-prepare-the-datasets)
 * [4. Run the Code](#4-run-the-code)
-* [5. Results](#6-results)
-* [6. License](#6-license)
-* [7. Acknowledgement](#7-acknowledgement)
-* [8. Citation](#8-citation)
+* [5. Acknowledgement](#5-acknowledgement)
+* [6. Citation](#6-citation)
 
 ## 1. Change Log
+- [2023/07/15] Now our paper is accepted to IROS 2023. Visit our [project website](https://necolizer.github.io/ISTA-Net/)!
 - [2023/03/07] Code Upload.
 
 ## 2. Prerequisites
+To clone the `main` branch only (for code) and exclude the `gh-pages` branch (for project website), use the following `git` command:
+```shell
+git clone -b main https://github.com/Necolizer/ISTA-Net.git
+```
 
 ```shell
 pip install -r requirements.txt 
@@ -212,16 +220,10 @@ python main.py --config config/asb/asb_noun_get_test_results.yaml --weights path
 
 Submit zipped json file `preds.json` in CodaLab Challenge [Assembly101 3D Action Recognition](https://codalab.lisn.upsaclay.fr/competitions/5256) to get the test results.
 
-## 5. Results
-TBD
-
-## 6. License
-[MIT](https://github.com/Necolizer/ISTA-Net/blob/main/LICENSE)
-
-## 7. Acknowledgement
+## 5. Acknowledgement
 Grateful to the collaborators/maintainers of [STTFormer](https://github.com/heleiqiu/STTFormer), [CTR-GCN](https://github.com/Uason-Chen/CTR-GCN), [MS-G3D](https://github.com/kenziyuliu/MS-G3D), [h2odataset](https://github.com/taeinkwon/h2odataset), [Assembly101](https://github.com/assembly-101/assembly101-action-recognition) repository. Thanks to the authors for their great work.
 
-## 8. Citation
+## 6. Citation
 
 If you find this work or code helpful in your research, please consider citing:
 ```
