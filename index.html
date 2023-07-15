@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition">
+  <meta name="keywords" content="Robotic Vision, Action Recognition, Human-robot Interaction">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">
+            <span class="highlight">I</span>nteractive <span class="highlight">S</span>patiotemporal 
+            <span class="highlight">T</span>oken <span class="highlight">A</span>ttention 
+            <span class="highlight">Net</span>work for Skeleton-based General Interactive Action Recognition
+          </h1>
+            <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Yuhang Wen<sup>1</sup>,
+              Zixuan Tang<sup>1</sup>,
+              Yunsheng Pang<sup>2</sup>,
+              Beichen Ding<sup>1</sup>, 
+              Mengyuan Liu<sup>3</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>Sun Yat-sen University&nbsp;</span>
+            <span class="author-block"><sup>2</sup>Tencent Technology (Shenzhen) Co., Ltd.&nbsp;</span>
+            <span class="author-block"><sup>3</sup>Shenzhen Graduate School, Peking University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/Necolizer/ISTA-Net"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <span class="link-block">
+                <a href="https://github.com/Necolizer/ISTA-Net"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/Necolizer/ISTA-Net"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Necolizer/ISTA-Net"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Download Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/Necolizer/ISTA-Net"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-download"></i>
+                  </span>
+                  <span>Checkpoint</span>
+                  </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        General Interactive Actions Addressing the Diversity of Interacting Entities.
+        <br>
+        (Person-to-person, Hand-to-hand & Hand-to-object)
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recognizing interactive action plays an important role in human-robot interaction and collaboration. 
+            Previous methods use late fusion and co-attention mechanism to capture interactive relations, which have limited learning capability or inefficiency to adapt to more interacting entities. 
+            With assumption that priors of each entity are already known, they also lack evaluations on a more general setting addressing the diversity of subjects. 
+          </p>
+          <p>
+            To address these problems, we propose an <span class="highlight">Interactive Spatiotemporal Token Attention Network (ISTA-Net)</span>, which simultaneously model spatial, temporal, and interactive relations. 
+            Specifically, our network contains a tokenizer to partition Interactive Spatiotemporal Tokens (ISTs), which is a unified way to represent motions of multiple diverse entities. 
+            By extending the entity dimension, ISTs provide better interactive representations. 
+            To jointly learn along three dimensions in ISTs, multi-head self-attention blocks integrated with 3D convolutions are designed to capture inter-token correlations. 
+            When modeling correlations, a strict entity ordering is usually irrelevant for recognizing interactive actions. 
+            To this end, Entity Rearrangement is proposed to eliminate the orderliness in ISTs for interchangeable entities. 
+          </p>
+          <p>
+            Extensive experiments on four datasets verify the effectiveness of ISTA-Net by outperforming state-of-the-art methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <video id="1" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/1.mp4"
+                  type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div> -->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <!-- Definition. -->
+        <h2 class="title is-3">What is A General Interactive Action</h2>
+        <!-- <div class="content has-text-justified">
+          
+        </div> -->
+        <img src="./static/images/Definition.svg" alt>
+        
+        <!--/ Definition. -->
+
+        <br><br>
+
+        <!-- Architecture. -->
+        <h2 class="title is-3">What ISTA-Net Features</h2>
+        <img src="./static/images/Architecture.svg" alt>
+        <div class="content has-text-justified">
+          <ul>
+            <li class="features"><b>Interactive Spatiotemporal Tokenization</b></li>
+              A general solution to represent motion of multiple skeletons including
+              diverse subjects, without the assumption that priors of each
+              interacting entity are already known.
+            <li class="features"><b>Entity Rearrangement</b></li>
+              A simple yet effective way to ensure inherent permutation
+              invariance for unordered interacting entities.
+            <li class="features"><b>Token Self-Attention Blocks</b></li>
+              Our architecture incorporates a multi-head self-attention mechanism to model the spatial, temporal, and interactive rela-
+              tionships simultaneously.
+          </ul>
+        </div>
+        <!--/ Architecture. -->
+
+        <!-- Benchmarks. -->
+        <h2 class="title is-3">Benchmark Difficulty</h2>
+        <img src="./static/images/Benchmarks.svg" alt>
+        <!-- <div class="content has-text-justified">
+        
+        </div> -->
+        <!--/ Benchmarks. -->
+
+        <br><br>
+
+        <!-- Visualiztions. -->
+        <h2 class="title is-3">Visualizations</h2>
+        <img src="./static/images/Visualiztions.svg" alt>
+        <!-- <div class="content has-text-justified">
+        
+        </div> -->
+        <!--/ Visualiztions. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{
+      TBD
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <!-- <a class="icon-link"
+         href="https://github.com/Necolizer/ISTA-Net">
+        <i class="fas fa-file-pdf"></i>
+      </a> -->
+      <a class="icon-link" href="https://github.com/Necolizer/ISTA-Net" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+        <div class="content">
+          <p>
+            Template of this page is borrowed from <a
+              href="https://nerfies.github.io/">Nerfies</a>. Grateful to this great work.
+
+          </p>
+        </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
