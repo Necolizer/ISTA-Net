@@ -1,9 +1,7 @@
 # Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition
-[[Website]](https://necolizer.github.io/ISTA-Net/)[[License]](https://github.com/Necolizer/ISTA-Net/blob/main/LICENSE)
+![Static Badge](https://img.shields.io/badge/Project-Page-orange?style=flat&logo=googlechrome&logoColor=orange&link=https%3A%2F%2Fnecolizer.github.io%2FISTA-Net%2F) ![Static Badge](https://img.shields.io/badge/License-MIT-blue?style=flat&link=https%3A%2F%2Fgithub.com%2FNecolizer%2FISTA-Net%2Fblob%2Fmain%2FLICENSE)
 
 This repository is the official implementation of Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition (IROS 2023).
-
-https://github.com/Necolizer/ISTA-Net/blob/gh-pages/static/videos/teaser.mp4
 
 ![](https://github.com/Necolizer/ISTA-Net/blob/gh-pages/static/images/Architecture.svg)
 
@@ -227,5 +225,10 @@ Grateful to the collaborators/maintainers of [STTFormer](https://github.com/hele
 
 If you find this work or code helpful in your research, please consider citing:
 ```
-TBD
+@inproceedings{wen2023interactive,
+  title={Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition},
+  author={Wen, Yuhang and Tang, Zixuan and Pang, Yunsheng and Ding, Beichen and Liu, Mengyuan},
+  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year={2023}
+}
 ```
