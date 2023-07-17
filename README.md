@@ -9,6 +9,9 @@
   <img src='https://img.shields.io/badge/License-MIT-blue?style=flat' alt='arXiv PDF'>
 </a>
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/interactive-spatiotemporal-token-attention/human-interaction-recognition-on-ntu-rgb-d-1)](https://paperswithcode.com/sota/human-interaction-recognition-on-ntu-rgb-d-1?p=interactive-spatiotemporal-token-attention) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/interactive-spatiotemporal-token-attention/human-interaction-recognition-on-sbu)](https://paperswithcode.com/sota/human-interaction-recognition-on-sbu?p=interactive-spatiotemporal-token-attention)
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/interactive-spatiotemporal-token-attention/skeleton-based-action-recognition-on-h2o-2)](https://paperswithcode.com/sota/skeleton-based-action-recognition-on-h2o-2?p=interactive-spatiotemporal-token-attention) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/interactive-spatiotemporal-token-attention/3d-action-recognition-on-assembly101)](https://paperswithcode.com/sota/3d-action-recognition-on-assembly101?p=interactive-spatiotemporal-token-attention)
+
 This repository is the official implementation of Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition (IROS 2023).
 
 ![](https://github.com/Necolizer/ISTA-Net/blob/gh-pages/static/images/Architecture.svg)
