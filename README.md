@@ -14,6 +14,8 @@
 
 This repository is the official implementation of Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition (IROS 2023).
 
+![](https://github.com/Necolizer/ISTA-Net/blob/gh-pages/static/videos/actions.gif)
+
 ![](https://github.com/Necolizer/ISTA-Net/blob/gh-pages/static/images/Architecture.svg)
 
 ## 0. Table of Contents
