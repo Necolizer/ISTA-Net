@@ -1,5 +1,13 @@
 # Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition
-![Static Badge](https://img.shields.io/badge/Paper-arXiv-green?style=flat&logo=arxiv&link=https%3A%2F%2Farxiv.org%2Fabs%2F2307.07469) ![Static Badge](https://img.shields.io/badge/Project-Page-orange?style=flat&logo=googlechrome&logoColor=orange&link=https%3A%2F%2Fnecolizer.github.io%2FISTA-Net%2F) ![Static Badge](https://img.shields.io/badge/License-MIT-blue?style=flat&link=https%3A%2F%2Fgithub.com%2FNecolizer%2FISTA-Net%2Fblob%2Fmain%2FLICENSE)
+<a href='https://arxiv.org/abs/2307.07469'>
+  <img src='https://img.shields.io/badge/Paper-arXiv-green?style=flat&logo=arxiv' alt='arXiv PDF'>
+</a>
+<a href='https://necolizer.github.io/ISTA-Net/'>
+  <img src='https://img.shields.io/badge/Project-Page-orange?style=flat&logo=googlechrome&logoColor=orange' alt='arXiv PDF'>
+</a>
+<a href='https://github.com/Necolizer/ISTA-Net/blob/main/LICENSE'>
+  <img src='https://img.shields.io/badge/License-MIT-blue?style=flat' alt='arXiv PDF'>
+</a>
 
 This repository is the official implementation of Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition (IROS 2023).
 
