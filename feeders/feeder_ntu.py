@@ -21,7 +21,7 @@ class Feeder(Dataset):
         use_mmap: If true, use mmap mode to load data, which can save the running memory
         bone: use bone modality or not
         vel: use motion modality or not
-        only_label: only load label for ensemble score compute
+        entity_rearrangement: If true, use entity rearrangement (interactive actions)
         """
 
         self.debug = debug

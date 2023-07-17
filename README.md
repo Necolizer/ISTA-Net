@@ -83,10 +83,40 @@ python seq_transformation.py
 
 ### 3.2 SBU-Kinect-Interaction
 **DownLoad**
-
+Download the dataset directly from browser with links in [SBU Readme](http://vision.cs.stonybrook.edu/~kiwon/Datasets/SBU_Kinect_Interactions/README.txt), or using `download_sbu.py` in `./data/sbu/download_sbu.py`:
+```shell
+cd ./data/sbu
+python download_sbu.py --version clean --savedir ./SBU-Kinect-Interaction/Clean
+python download_sbu.py --version noisy --savedir ./SBU-Kinect-Interaction/Noisy
+```
+Go to the `savedir` and unzip all the downloaded zip file `unzip '*.zip'`
 **Directory Structure**
-
+```
+path/to/your/SBU-Kinect-Interaction
+├── Clean
+│   ├── s01s02
+│   │   ├── 01
+│   │   │   └── 001
+│   │   │       ├── depth_000055.png
+│   │   │       ├── ...
+│   │   │       ├── rgb_000055.png
+│   │   │       ├── ..
+│   │   │       └── skeleton_pos.txt
+│   │   ├── 02
+│   │   ├── ...
+│   │   └── 08
+│   ├── s01s03
+│   ├── ...
+│   └── s07s03
+└── Noisy
+    ├── ...
+```
 **Generating Data**
+```shell
+cd ./data/sbu
+python getSBU.py --rootdir ./SBU-Kinect-Interaction/Clean --savedir ./SBU-Kinect-Interaction-Skeleton/Clean
+python getSBU.py --rootdir ./SBU-Kinect-Interaction/Noisy --savedir ./SBU-Kinect-Interaction-Skeleton/Noisy
+```
 
 ### 3.3 H2O
 
@@ -135,6 +165,7 @@ path/to/your/extracted/files
 
 Generate H2O pth files using `./data/h2o/generate_h2o.py`.
 ```shell
+cd ./data/h2o
 python generate_h2o.py --root path/to/your/extracted/files --dest ./h2o_pth --frames 120
 ```
 
@@ -163,7 +194,31 @@ path/to/your/downdload/root
 
 **Generating Data**
 
-TBD
+```shell
+cd ./data/asb
+
+# Train & Validation Set
+# Step 1:
+python ./Preprocess/1_generate_pose_data.py --rootdir path/to/your/downdload/root/poses_60fps --csvdir path/to/your/downdload/root/fine-grained-annotations --savedir ./RAW_contex25_thresh0
+# Step 2:
+# Action (mandatory)
+python ./Preprocess/2_get_final_dataset.py --data_path ./RAW_contex25_thresh0 --type action
+# Verb (optional)
+python ./Preprocess/2_get_final_dataset.py --data_path ./RAW_contex25_thresh0 --type verb
+# Object (optional)
+python ./Preprocess/2_get_final_dataset.py --data_path ./RAW_contex25_thresh0 --type noun
+
+# Test Set
+# Step 1:
+python ./PreprocessTest/1_generate_pose_data.py --rootdir path/to/your/downdload/root/poses_60fps --csvdir path/to/your/downdload/root/fine-grained-annotations --savedir ./RAW_contex25_thresh0
+# Step 2:
+# Action (mandatory)
+python ./PreprocessTest/2_get_final_dataset.py --data_path ./RAW_contex25_thresh0 --type action
+# Verb (optional)
+python ./PreprocessTest/2_get_final_dataset.py --data_path ./RAW_contex25_thresh0 --type verb
+# Object (optional)
+python ./PreprocessTest/2_get_final_dataset.py --data_path ./RAW_contex25_thresh0 --type noun
+```
 
 The test set has a less number of valid samples than the provided `test_challenge.csv`. The 1018 invlid test samples (about 5%) has no pose data and will fail to predict. This may cause lower accuracy reports in CodaLab Challenge Page. More information about this could be found in discussions [assembly101 Issue#4](https://github.com/assembly-101/assembly101-action-recognition/issues/4).
 
@@ -230,6 +285,16 @@ python main.py --config config/asb/asb_noun_get_test_results.yaml --weights path
 ```
 
 Submit zipped json file `preds.json` in CodaLab Challenge [Assembly101 3D Action Recognition](https://codalab.lisn.upsaclay.fr/competitions/5256) to get the test results.
+
+You can get a fused json file for action+verb+object using the following script but you should specify the path args in this script:
+```shell
+# You should specify the paths in asb_fuse_json_files.py FIRST
+python tools/asb_fuse_json_files.py
+```
+> ATTENTION: `preds.json` for action is about 673M before compression, and for action+verb+object is about 727M before compression.
+
+### 4.5 Dataset Sample Visualizations
+We provide scripts in `tools/dataset_viz` to visualize dataset samples (pngs or gifs) for the above 4 datasets. Specify the args in those scripts and start visualizing general interactive actions!
 
 ## 5. Acknowledgement
 Grateful to the collaborators/maintainers of [STTFormer](https://github.com/heleiqiu/STTFormer), [CTR-GCN](https://github.com/Uason-Chen/CTR-GCN), [MS-G3D](https://github.com/kenziyuliu/MS-G3D), [h2odataset](https://github.com/taeinkwon/h2odataset), [Assembly101](https://github.com/assembly-101/assembly101-action-recognition) repository. Thanks to the authors for their great work.

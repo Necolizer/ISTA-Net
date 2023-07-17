@@ -5,7 +5,7 @@ run_mode: asb_test_get_results
 # feeder
 feeder: feeders.feeder_asb.Feeder_Test
 test_feeder_args:
-  data_path: data/asb/proc/share_contex25_thresh0_verb/test_data_joint_200.npy
+  data_path: data/asb/share_contex25_thresh0_verb/test_data_joint_200.npy
   debug: False
   window_size: 120
   p_interval: [0.95]

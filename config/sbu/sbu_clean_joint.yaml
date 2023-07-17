@@ -5,7 +5,7 @@ run_mode: train
 # feeder
 feeder: feeders.feeder_sbu.Feeder
 train_feeder_args:
-  data_path: data/SBU-Kinect-Interaction-Skeleton/Clean
+  data_path: data/sbu/SBU-Kinect-Interaction-Skeleton/Clean
   split: train
   fold: 0 # 0,1,2,3,4
   debug: False
@@ -21,7 +21,7 @@ train_feeder_args:
   entity_rearrangement: True
 
 test_feeder_args:
-  data_path: data/SBU-Kinect-Interaction-Skeleton/Clean
+  data_path: data/sbu/SBU-Kinect-Interaction-Skeleton/Clean
   split: test
   fold: 0 # 0,1,2,3,4
   debug: False

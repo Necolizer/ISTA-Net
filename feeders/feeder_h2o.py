@@ -8,7 +8,7 @@ import os
 class Feeder(Dataset):
     def __init__(self, data_path, label_path=None, p_interval=1, split='train', random_choose=False, random_shift=False,
                  random_move=False, random_rot=False, window_size=-1, normalization=False, debug=False, use_mmap=True,
-                 bone=False, vel=False, entity_rearrangement=False, random_translation=False, random_joint_mask=False):
+                 bone=False, vel=False, entity_rearrangement=False):
         """
         data_path:
         label_path:
@@ -23,7 +23,7 @@ class Feeder(Dataset):
         use_mmap: If true, use mmap mode to load data, which can save the running memory
         bone: use bone modality or not
         vel: use motion modality or not
-        only_label: only load label for ensemble score compute
+        entity_rearrangement: If true, use entity rearrangement (interactive actions)
         """
 
         self.debug = debug
@@ -107,7 +107,7 @@ class Feeder_Test(Dataset):
         use_mmap: If true, use mmap mode to load data, which can save the running memory
         bone: use bone modality or not
         vel: use motion modality or not
-        only_label: only load label for ensemble score compute
+        entity_rearrangement: If true, use entity rearrangement (interactive actions)
         """
 
         self.debug = debug

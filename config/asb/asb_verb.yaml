@@ -5,8 +5,8 @@ run_mode: train
 # feeder
 feeder: feeders.feeder_asb.Feeder
 train_feeder_args:
-  data_path: data/asb/proc/share_contex25_thresh0_verb/train_data_joint_200.npy
-  label_path: data/asb/proc/share_contex25_thresh0_verb/train_label.pkl
+  data_path: data/asb/share_contex25_thresh0_verb/train_data_joint_200.npy
+  label_path: data/asb/share_contex25_thresh0_verb/train_label.pkl
   debug: False
   random_choose: False
   random_shift: False
@@ -17,8 +17,8 @@ train_feeder_args:
   normalization: False
 
 test_feeder_args:
-  data_path: data/asb/proc/share_contex25_thresh0_verb/validation_data_joint_200.npy
-  label_path: data/asb/proc/share_contex25_thresh0_verb/validation_label.pkl
+  data_path: data/asb/share_contex25_thresh0_verb/validation_data_joint_200.npy
+  label_path: data/asb/share_contex25_thresh0_verb/validation_label.pkl
   debug: False
   window_size: 120
   p_interval: [0.95]
