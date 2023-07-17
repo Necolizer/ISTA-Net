@@ -83,6 +83,7 @@ python seq_transformation.py
 
 ### 3.2 SBU-Kinect-Interaction
 **DownLoad**
+
 Download the dataset directly from browser with links in [SBU Readme](http://vision.cs.stonybrook.edu/~kiwon/Datasets/SBU_Kinect_Interactions/README.txt), or using `download_sbu.py` in `./data/sbu/download_sbu.py`:
 ```shell
 cd ./data/sbu
@@ -90,7 +91,9 @@ python download_sbu.py --version clean --savedir ./SBU-Kinect-Interaction/Clean
 python download_sbu.py --version noisy --savedir ./SBU-Kinect-Interaction/Noisy
 ```
 Go to the `savedir` and unzip all the downloaded zip file `unzip '*.zip'`
+
 **Directory Structure**
+
 ```
 path/to/your/SBU-Kinect-Interaction
 ├── Clean
@@ -111,7 +114,9 @@ path/to/your/SBU-Kinect-Interaction
 └── Noisy
     ├── ...
 ```
+
 **Generating Data**
+
 ```shell
 cd ./data/sbu
 python getSBU.py --rootdir ./SBU-Kinect-Interaction/Clean --savedir ./SBU-Kinect-Interaction-Skeleton/Clean
