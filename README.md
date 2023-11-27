@@ -179,18 +179,17 @@ python generate_h2o.py --root path/to/your/extracted/files --dest ./h2o_pth --fr
 **DownLoad**
 
 1. Submit an access request with your google account in [Google Drive](https://drive.google.com/drive/folders/1nh8PHwEw04zxkkkKlfm4fsR3IPEDvLKj). Download `poses_60fps` directly or using scripts in [assembly101-download-scripts](https://github.com/assembly-101/assembly101-download-scripts).
-2. Download [fine-grained-annotations](https://github.com/assembly-101/assembly101-annotations/blob/main/fine-grained-annotations) in [Google Drive](https://drive.google.com/drive/folders/1QoT-hIiKUrSHMxYBKHvWpW9Z9aCznJB7?usp=sharing)
+2. Download `test_challenge.csv` in [GoogleDrive/fine-grained-annotations](https://drive.google.com/drive/folders/1QoT-hIiKUrSHMxYBKHvWpW9Z9aCznJB7?usp=sharing)
+3. Download 3 csv files in [asb101 repo](https://github.com/assembly-101/assembly101-action-recognition/tree/main/MS-G3D-action-recognition/CSVs).
 
 **Directory Structure**
 ```
 path/to/your/downdload/root
 ├── fine-grained-annotations
-│   ├── actions.csv
-│   ├── head_actions.csv
-│   ├── test.csv            (@30fps)
-│   ├── test_challenge.csv  (@30fps)
-│   ├── train.csv           (@30fps)
-│   └── validation.csv      (@30fps)
+│   ├── test_challenge.csv  (@30fps)   [This file is download from googledrive]
+│   ├── actions.csv                    [This file is download from asb101 repo]
+│   ├── train.csv           (@60fps)   [This file is download from asb101 repo]
+│   └── validation.csv      (@60fps)   [This file is download from asb101 repo]
 └── poses_60fps
     ├── nusar-2021_action_both_9011-a01_9011_user_id_2021-02-01_153724.json
     ├── nusar-2021_action_both_9011-b06b_9011_user_id_2021-02-01_154253.json

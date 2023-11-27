@@ -45,7 +45,7 @@ def str2bool(v):
 
 def get_parser():
     # parameter priority: command line > config > default
-    parser = argparse.ArgumentParser(description='Spatial Temporal Tuples Transformer')
+    parser = argparse.ArgumentParser(description='Skeleton-based Action Recgnition')
     parser.add_argument('--seed', type=int, default=1, help='seed')
     parser.add_argument('--work_dir', default='./work_dir/ntu/temp', help='the work folder for storing results')
     parser.add_argument('--config', default='./config/ntu/ntu26_xsub_joint.yaml', help='path to the configuration file')
