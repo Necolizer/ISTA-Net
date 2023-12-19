@@ -1,12 +1,15 @@
 # Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition
+<a href='https://ieeexplore.ieee.org/document/10342472'>
+  <img src='https://img.shields.io/badge/Paper-IROS23-blue?style=flat&logo=ieee' alt='IEEE PDF'>
+</a>
 <a href='https://arxiv.org/abs/2307.07469'>
   <img src='https://img.shields.io/badge/Paper-arXiv-green?style=flat&logo=arxiv' alt='arXiv PDF'>
 </a>
 <a href='https://necolizer.github.io/ISTA-Net/'>
-  <img src='https://img.shields.io/badge/Project-Page-orange?style=flat&logo=googlechrome&logoColor=orange' alt='arXiv PDF'>
+  <img src='https://img.shields.io/badge/Project-Page-orange?style=flat&logo=googlechrome&logoColor=orange' alt='project page'>
 </a>
 <a href='https://github.com/Necolizer/ISTA-Net/blob/main/LICENSE'>
-  <img src='https://img.shields.io/badge/License-MIT-blue?style=flat' alt='arXiv PDF'>
+  <img src='https://img.shields.io/badge/License-MIT-yellow?style=flat' alt='license'>
 </a>
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/interactive-spatiotemporal-token-attention/human-interaction-recognition-on-ntu-rgb-d-1)](https://paperswithcode.com/sota/human-interaction-recognition-on-ntu-rgb-d-1?p=interactive-spatiotemporal-token-attention) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/interactive-spatiotemporal-token-attention/human-interaction-recognition-on-sbu)](https://paperswithcode.com/sota/human-interaction-recognition-on-sbu?p=interactive-spatiotemporal-token-attention)
@@ -28,6 +31,7 @@ This repository is the official implementation of Interactive Spatiotemporal Tok
 * [6. Citation](#6-citation)
 
 ## 1. Change Log
+- [2023/12/19] Our paper now is available online in IROS 2023 proceeding. [Here's the link](https://ieeexplore.ieee.org/document/10342472).
 - [2023/07/15] Now our paper is accepted to IROS 2023. Visit our [project website](https://necolizer.github.io/ISTA-Net/)!
 - [2023/03/07] Code Upload.
 
@@ -307,10 +311,13 @@ Grateful to the collaborators/maintainers of [STTFormer](https://github.com/hele
 
 If you find this work or code helpful in your research, please consider citing:
 ```
-@inproceedings{wen2023interactive,
-  title={Interactive Spatiotemporal Token Attention Network for Skeleton-based General Interactive Action Recognition},
+@INPROCEEDINGS{wen2023interactive,
   author={Wen, Yuhang and Tang, Zixuan and Pang, Yunsheng and Ding, Beichen and Liu, Mengyuan},
-  booktitle={IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year={2023}
-}
+  booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+  title={Interactive Spatiotemporal Token Attention Network for Skeleton-Based General Interactive Action Recognition}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={7886-7892},
+  doi={10.1109/IROS55552.2023.10342472}}
 ```
