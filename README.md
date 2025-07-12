@@ -31,8 +31,9 @@ This repository is the official implementation of Interactive Spatiotemporal Tok
 * [6. Citation](#6-citation)
 
 ## 1. Change Log
+- [2025/07/12] Last year, our new project working on a similar topic was accepted by NeurIPS 2024. [Check it out here](https://proceedings.neurips.cc/paper_files/paper/2024/hash/11f5520daf9132775e8604e89f53925a-Abstract-Conference.html).
 - [2023/12/19] Our paper now is available online in IROS 2023 proceeding. [Here's the link](https://ieeexplore.ieee.org/document/10342472).
-- [2023/07/15] Now our paper is accepted to IROS 2023. Visit our [project website](https://necolizer.github.io/ISTA-Net/)!
+- [2023/07/15] Now our paper is accepted by IROS 2023. Visit our [project website](https://necolizer.github.io/ISTA-Net/)!
 - [2023/03/07] Code Upload.
 
 ## 2. Prerequisites
@@ -320,4 +321,16 @@ If you find this work or code helpful in your research, please consider citing:
   number={},
   pages={7886-7892},
   doi={10.1109/IROS55552.2023.10342472}}
+
+@inproceedings{NEURIPS2024_wen2024chase,
+  author = {Wen, Yuhang and Liu, Mengyuan and Wu, Songtao and Ding, Beichen},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor = {A. Globerson and L. Mackey and D. Belgrave and A. Fan and U. Paquet and J. Tomczak and C. Zhang},
+  pages = {9388--9420},
+  publisher = {Curran Associates, Inc.},
+  title = {CHASE: Learning Convex Hull Adaptive Shift for Skeleton-based Multi-Entity Action Recognition},
+  url = {https://proceedings.neurips.cc/paper_files/paper/2024/file/11f5520daf9132775e8604e89f53925a-Paper-Conference.pdf},
+  volume = {37},
+  year = {2024}
+}
 ```
